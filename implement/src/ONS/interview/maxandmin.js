@@ -1,0 +1,1 @@
+const array = [20, 50]

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+    <label>name</label>
+    <input type="text" id="name" label="Name" name="label"></input>
+    <br>
+
+    <label>age</label>
+    <input type="text" id="age" label="search value" name="age"></input>
+    <br>
+
+    <label>place</label>
+    <select id="place" label="place" name="place">
+        <option value="Banga"> Banga</option>
+        <option value="Banga2"> Banga2</option>
+        <option value="Banga3"> Banga3</option>
+        <option value="Banga4"> Banga4</option>
+        <option value="Banga5"> Banga5</option>
+    </select>
+    <br>
+
+    <label>Gender</label>
+    <input type="radio" name="gen" value="male" id="male" label="Male">Male</input>
+    <input type="radio" name="gen1" value="female" id="female" label="Female">Female</input>
+    <br>
+
+    <input type="submit" id="forms" onclick="submitData()"></input>
+    <br>
+
+    <br>
+    <br>
+    <table id="tablee">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Place</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script src="table.js">
+        let tab = document.getElementById("tablee");
+        let list1 = [], list2 = [], list3 = [], list4 = [];
+
+        let x = 0;
+        let n = 1;
+
+        const submitData = () => {
+
+            let row1 = tab.insertRow(n)
+            list1[x] = document.getElementById("name").value
+            list2[x] = document.getElementById("age").value
+            let male = document.getElementById("male").value
+            let female = document.getElementById("female").value
+            console.log('male', male);
+            if(male) {
+                list3[x] = male
+            } else {
+                list3[x] = female
+            }
+            list4[x] = document.getElementById("place").value
+            
+            let cell1 = row1.insertCell(0)
+            let cell2 = row1.insertCell(1)
+            let cell3 = row1.insertCell(2)
+            let cell4 = row1.insertCell(3)
+
+            cell1.innerHTML = list1[x];
+            cell2.innerHTML = list2[x]
+            cell3.innerHTML = list3[x]
+            cell4.innerHTML = list4[x]
+
+            n++;
+            x++;
+        }
+    </script>
+</body>
+
+</html>

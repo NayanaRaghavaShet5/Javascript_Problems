@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Mahadeva",
+        "age": 1000000,
+        "company": "220"
+    }
+]
+// inorder to convert the JSON string to JSON Object -> JSON.parse
+
+// inorder to convert the JSON object to JSON string -> JSON.Stringyfy
